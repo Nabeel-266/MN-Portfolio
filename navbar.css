@@ -1,0 +1,576 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=K2D:wght@100;200;300;400;500;600;700;800&family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+:root{
+    --BlackColor:#0e0e0e;
+    --WhiteColor:#ffffff;
+    --TolightgrayColor:#e2e2e2;
+    --LightgrayColor:#aaaaaa;
+    --GrayColor:#5a5a5a;
+    --MediumgrayColor:#3d3d3d;
+    --DarkgrayColor:#272727;
+    --PrimaryColor:#ffd000;
+    --SecondaryColor:#ffbb00;
+    --SecondaryColor02:#cf9800;
+    --bgColor: #f8f8d7;
+}
+
+::-webkit-scrollbar{
+    width: 11px;
+    position: absolute;
+    left: 20px;
+}
+::-webkit-scrollbar-track{
+    background: var(--bgColor);
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(to bottom, #303030 40%, #272727 100%);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(to top, #303030 40%, #272727 100%);
+}
+
+html{
+    font-size: 10px;
+}
+body{
+    background-color: var(--WhiteColor);
+    scroll-behavior: smooth;
+}
+header{
+    width: 100vw;
+    z-index: 100;
+    position: fixed;
+    background-color: var(--bgColor);
+}
+nav{
+    height: 70px;
+}
+#navbar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* For Menu Icon */
+.menu-icon{
+    border: none;
+    background-color: #fce687;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    color: var(--GrayColor);
+    border-radius: 5px;
+}
+
+/* For LOGO Image & Text */
+.logo{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.logo img{
+    width: 42px;
+}
+.logo h1{
+    height: 32px;
+    font-size: 3.4rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: var(--GrayColor);
+    margin-top: 0px;
+}
+.logo h1 span{
+    color: var(--PrimaryColor);
+}
+
+/* For Navigations */
+.navigation{
+    width: 650px;
+    height: 28px;
+    position: relative;
+    top: 4px;
+    right: 20px;
+}
+.navigation ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.navigation ul li{
+    margin: auto;
+    position: relative;
+}
+.navigation ul li::before{
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    border-radius: 100px;
+    border-radius: 25px;
+    background-color: var(--PrimaryColor);
+    transition: 0.3s;
+    transform: scaleX(0);
+}
+.navigation ul li:hover::before{
+    transform: scaleX(1);
+}
+.navigation ul li a{
+    font-size: 1.7rem;
+    text-decoration: none;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--GrayColor);
+    font-weight: bold;
+}
+
+/* For Resume Button */
+.resume{
+    border: none;
+    border-radius: 7px;
+    background: linear-gradient(to bottom, #ffd000 10%, #ffbb00 100%);
+    font-family: 'Varela Round', sans-serif;
+    padding: 6px 14px;
+    font-size: 1.5rem;
+    color: var(--WhiteColor);
+    box-shadow: 2px 10px 20px 1px #fce687;
+    transform: scale(1);
+    transition: 0.2s;
+}
+.resume:hover{
+    transform: scale(1.07);
+}
+.resume:active{
+    transform: scale(0.93);
+}
+
+
+/* For SideBar */
+.sidebar{
+    /* background: linear-gradient(to bottom right, rgb(70, 70, 70) 0%, var(--DarkgrayColor) 100%); */
+    background: linear-gradient(to left, #232526, #414345);
+    width: 100vw;
+    height: 90vh;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    z-index: 1000;
+    display: flex;
+    border-radius: 0px 10px 10px 0px;
+    transform: translate(-100%);
+    transition: 0.4s;
+}
+.show-sidebar{
+    transform: translate(0%);
+}
+.sidebar .navigate{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 20px 30px 20px 20px;
+}
+.navigate .heading{
+    width: 100%;
+    height: 10%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading h2{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: var(--WhiteColor);
+    margin: 0%;
+    border-bottom: 3px solid var(--WhiteColor);
+}
+.heading h2 span{
+    color: var(--PrimaryColor);
+}
+.navigate-options{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.home, .about, .services, .skills, .projects, .contact{
+    margin: 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home{
+    width: 100%;
+    height: 13%; 
+}
+.home a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    color: var(--WhiteColor);
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: var(--GrayColor);
+    transition: 0.1s;
+}
+.home a:hover{
+    background-color: var(--PrimaryColor);
+}
+.home h5{
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.about{
+    width: 100%;
+    height: 13%; 
+}
+.about a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    color: var(--WhiteColor);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.1s;
+}
+.about a:hover{
+    background-color: var(--SecondaryColor);
+}
+.about h5{
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.services{
+    width: 100%;
+    height: 13%; 
+}
+.services a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--WhiteColor);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.1s;
+}
+.services a:hover{
+    background-color: var(--SecondaryColor);
+}
+.services h5{
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.skills{
+    width: 100%;
+    height: 13%; 
+}
+.skills a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--WhiteColor);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.1s;
+}
+.skills a:hover{
+    background-color: var(--SecondaryColor);
+}
+.skills h5{
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.projects{
+    width: 100%;
+    height: 13%; 
+}
+.projects a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--WhiteColor);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.1s;
+}
+.projects a:hover{
+    background-color: var(--SecondaryColor);
+}
+.projects h5{
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.contact{
+    width: 100%;
+    height: 13%; 
+}
+.contact a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--WhiteColor);
+    text-decoration: none;
+    padding: 5px 5px 8px 5px;
+    border-radius: 5px;
+    transition: 0.1s;
+}
+.contact a:hover{
+    background-color: var(--SecondaryColor);
+}
+.contact h5{
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.Resume-btn{
+    width: 100%;
+    height: 15%; 
+}
+.Resume-btn a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--WhiteColor);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.1s;
+}
+.Resume-btn a button{
+    border: none;
+    border-radius: 7px;
+    background: linear-gradient(to bottom, #ffd000 10%, #ffbb00 100%);
+    font-family: 'Varela Round', sans-serif;
+    padding: 6px 24px;
+    font-size: 1.9rem;
+    color: var(--WhiteColor);
+    transform: scale(1);
+    transition: 0.3s;
+}
+.Resume-btn a button:hover{
+    transform: scale(1.05);
+}
+.Resume-btn a button:active{
+    transform: scale(0.95);
+}
+
+
+
+/* Smartphones Mobile Medium*/
+@media only screen and (max-width: 375px) {
+    nav{
+        height: 64px;
+    }
+    #navbar{
+        padding: 0px 20px;
+    }
+    .sidebar{
+        width: 100%;
+        height: 90%;
+        top: 64px;
+    }
+    .navigation{
+        display: none;
+    }
+    .menu-icon{
+        display: flex;
+        font-size: 2.7rem;
+        width: 33px;
+        height: 31px;
+    }   
+    .logo img{
+        width: 40px;
+        margin-bottom: 4px;
+    }
+    .logo h1{
+        font-size: 3.2rem;
+    }
+    .resume{
+        display: none;
+    }  
+  }
+
+/* Smartphones Mobile Large*/
+@media(min-width: 376px) and (max-width: 500px) {
+    nav{
+        height: 64px;
+    }
+    #navbar{
+        padding: 0px 20px;
+    }
+    .sidebar{
+        width: 100%;
+        height: 90%;
+        top: 64px;
+    }
+    .navigation{
+        display: none;
+    }
+    .menu-icon{
+        display: flex;
+        font-size: 2.7rem;
+        width: 33px;
+        height: 31px;
+    }   
+    .logo img{
+        width: 40px;
+        margin-bottom: 4px;
+    }
+    .logo h1{
+        font-size: 3.2rem;
+    }
+    .resume{
+        display: none;
+    }  
+  }
+
+  /* Tablet */
+  @media(min-width: 501px) and (max-width: 774px) {
+    nav{
+        height: 66px;
+    }
+    #navbar{
+        padding: 0px 30px;
+    }
+    .sidebar{
+        width: 100%;
+        height: 89%;
+        top: 66px;
+    }
+    .navigation{
+        display: none;
+    }
+    .menu-icon{
+        display: flex;
+        font-size: 2.7rem;
+        width: 34px;
+        height: 31px;
+    }
+    .logo img{
+        width: 42px;
+    }
+    .logo h1{
+        font-size: 3.4rem;
+    }
+    .resume{
+        display: none;
+    }   
+  }
+
+  /* Small Laptop */
+  @media(min-width: 775px) and (max-width: 992px) {
+    #navbar{
+        padding: 0px 40px;
+    }
+    .sidebar{
+        width: 100%;
+        height: 89%;
+    }
+     .navigation{
+        display: none;
+    }
+    .menu-icon{
+        display: flex;
+        font-size: 2.8rem;
+        width: 35px;
+        height: 32px;
+    }
+    .resume{
+        display: none;
+    }
+  }
+  /* Medium Laptop */
+  @media(min-width: 993px) and (max-width: 1200px) {
+    .navigation{
+        width: 600px;
+        height: 28px;
+        position: relative;
+        top: 2px;
+        right: 17px;
+    }
+    .navigation ul li a{
+        font-size: 1.7rem;
+    } 
+    .logo img{
+        width: 42px;
+    }
+    .logo h1{
+        font-size: 3.4rem;
+    }
+    .resume{
+        font-size: 1.6rem;
+    }
+    .sidebar{
+        display: none;
+    }
+  }
+
+  /* Widescreen */
+  @media(min-width: 1201px) {
+    .sidebar{
+        display: none;
+    }
+  }
+
+  /* Landscape */
+  /* @media(max-height: 500px) {
+    body {
+      background: orange;
+    }
+
+    #landscape h1 {
+      display: block;
+    }
+    
+  } */
