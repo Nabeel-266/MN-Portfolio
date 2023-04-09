@@ -5,10 +5,8 @@ let sidebar = document.querySelector('.sidebar');
 toggleButton.addEventListener("click", () => {
         if(toggleButton.firstElementChild.classList.contains("bx-menu-alt-left")){
                 toggleButton.firstElementChild.classList.replace("bx-menu-alt-left","bx-menu-alt-right");
-                sidebar.classList.remove('hidden');
         } else {
                 toggleButton.firstElementChild.classList.replace("bx-menu-alt-right","bx-menu-alt-left");
-                sidebar.classList.remove('hidden');
         }
 
         sidebar.classList.toggle("show-sidebar");
